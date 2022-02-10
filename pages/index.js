@@ -3,7 +3,7 @@ import IndexRes from "../lib/es6/src/Index.bs";
 export default function IndexPage() {
   return (
     <div>
-      Hello World
+      <div>Hello World</div>
       <IndexRes />
     </div>
   );
