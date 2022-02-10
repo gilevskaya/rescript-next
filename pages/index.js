@@ -1,4 +1,4 @@
-import IndexRes from "../src/Index.bs";
+import IndexRes from "../lib/es6/src/Index.bs";
 
 export default function IndexPage() {
   return (

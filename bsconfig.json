@@ -1,24 +1,25 @@
 {
-  "name": "res3f",
+  "name": "rescript-nextjs",
+  "version": "0.1.0",
+  "reason": {
+    "react-jsx": 3
+  },
   "sources": [
     {
-      "dir": "src"
+      "dir": "src",
+      "subdirs": true
     }
   ],
   "package-specs": [
     {
       "module": "es6",
-      "in-source": true
+      "in-source": false
     }
   ],
+  "suffix": ".bs.js",
   "bs-dependencies": [
     "@rescript/react"
   ],
-  "bs-dev-dependencies": [],
-  "reason": {
-    "react-jsx": 3
-  },
-  "suffix": ".bs.js",
   "bsc-flags": [
     "-bs-super-errors"
   ],
@@ -26,5 +27,5 @@
     "number": "-44-102",
     "error": "+5"
   },
-  "namespace": true,
+  "namespace": true
 }
