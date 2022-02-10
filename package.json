@@ -2,9 +2,9 @@
   "name": "rescript-nextjs",
   "version": "0.1.0",
   "scripts": {
-    "clean": "bsb -clean-world",
-    "dev": "concurrently \"bsb -clean-world -make-world -w\" \"next dev\"",
-    "build": "bsb -clean-world -make-world && next build",
+    "clean": "rescript clean -with-deps",
+    "dev": "concurrently \"rescript clean -with-deps && rescript build -w\" \"next dev\"",
+    "build": "rescript clean -with-deps && rescript build -with-deps && next build",
     "start": "next start"
   },
   "dependencies": {
