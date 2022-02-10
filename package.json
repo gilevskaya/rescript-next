@@ -1,0 +1,25 @@
+{
+  "name": "nextjs-rescript-r3f-ok",
+  "version": "1.0.0",
+  "scripts": {
+    "clean": "bsb -clean-world",
+    "dev": "concurrently \"bsb -clean-world -make-world -w\" \"next dev\"",
+    "build": "bsb -clean-world -make-world && next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@rescript/react": "0.10.1",
+    "bs-platform": "9.0.1",
+    "concurrently": "6.0.0",
+    "next": "10.0.7",
+    "next-compose-plugins": "2.2.1",
+    "next-transpile-modules": "4.1.0",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "react-three-fiber": "5.3.19",
+    "three": "0.126.0"
+  },
+  "license": "MIT",
+  "keywords": [],
+  "description": ""
+}
