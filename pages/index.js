@@ -7,7 +7,7 @@ import React from "react";
 export default function IndexPage() {
   const { data: session, status } = useSession()
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (session?.error === "RefreshAccessTokenError") {
       signIn(); // Force sign in to hopefully resolve error
     }
