@@ -2,8 +2,16 @@ import IndexRes from "../lib/es6/src/Index.bs";
 import { signIn, signOut, useSession } from "next-auth/react"
 import React from "react";
 
+
+
 export default function IndexPage() {
   const { data: session, status } = useSession()
+
+  useEffect(() => {
+    if (session?.error === "RefreshAccessTokenError") {
+      signIn(); // Force sign in to hopefully resolve error
+    }
+  }, [session]);
 
   React.useEffect(() => {
     if (session?.user) {
