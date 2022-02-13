@@ -9,7 +9,7 @@ export default function IndexPage() {
 
   React.useEffect(() => {
     if (session?.error === "RefreshAccessTokenError") {
-      signIn(); // Force sign in to hopefully resolve error
+      signIn(["google"]); // Force sign in to hopefully resolve error
     }
   }, [session]);
 
