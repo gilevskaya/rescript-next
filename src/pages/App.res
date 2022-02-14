@@ -20,38 +20,13 @@ module Header = {
 
 @react.component
 let make = () => {
-  // Js.log("App render")
-
-  // React.useEffect0(() => {
-  //   if session->Belt.Option.isSome {
-  //     let _ = %raw(`
-  //       fetch("https://tasks.googleapis.com/tasks/v1/users/@me/lists", {
-  //         method: "GET",
-  //         headers: {
-  //           Authorization: "Bearer " + session.accessToken,
-  //           "content-type": "application/json"
-  //         }
-  //       }).then(response => response.json())
-  //         .then(json => console.log(json))`)
-  //   }
-  //   None
-  // })
-
-  // React.useEffect(() => {
-  //   if (session?.user) {
-  //     fetch("https://tasks.googleapis.com/tasks/v1/users/@me/lists", {
-  //       method: "GET",
-  //       headers: {
-  //         Authorization: `Bearer ${session.accessToken}`,
-  //         "content-type": "application/json"
-  //       }
-  //     }).then(response => response.json())
-  //       .then(json => console.log(json))
-  //   }
-  // }, [session])
-
   <Session.Context.Provider>
     <Next.Head> <title key="title"> {"App"->React.string} </title> </Next.Head>
-    <div> <Header /> <div className="p-5"> {React.string("Logged content...")} </div> </div>
+    <div>
+      <Header />
+      <div className="m-5 mt-10">
+        <div className="mb-5 font-medium"> {React.string("Logged content:")} </div> <TaskLists />
+      </div>
+    </div>
   </Session.Context.Provider>
 }
