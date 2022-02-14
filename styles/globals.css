@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.google-button {
+  background-color: #fff;
+  font-size: 14px;
+  height: 40px;
+  border: 1px solid #dadce0;
+  border-radius: 4px;
+  padding: 0 12px;
+  /* text */
+  font-family: 'Google Sans',arial,sans-serif;
+  font-weight: 500;
+  color: #3c4043;
+  letter-spacing: 0.25px;
+}
+
+.google-button:hover, .google-button:focus {
+  box-shadow: none;
+  border-color: #d5e2fa;
+  background-color: #f8fafe;
+  outline: none;
+}
+

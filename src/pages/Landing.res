@@ -15,9 +15,7 @@ let make = () => {
   }, (session, router))
 
   <div className="m-5">
-    <div className="mb-5"> {React.string("sign in cleanup")} </div>
-    <Button
-      title="Sign in"
+    <GoogleButton
       href="/api/auth/signin"
       onClick={_e => {
         let _ = %raw(`_e.preventDefault()`)
