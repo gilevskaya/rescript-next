@@ -1,8 +1,6 @@
-import IndexRes from "../lib/es6/src/Index.bs";
+import { make as Landing } from "../lib/es6/src/pages/Landing.bs";
 import { signIn, signOut, useSession } from "next-auth/react"
 import React from "react";
-
-
 
 export default function IndexPage() {
   const { data: session, status } = useSession()
@@ -28,7 +26,7 @@ export default function IndexPage() {
 
   return (
     <div>
-      <IndexRes />
+      <Landing />
       {!session && (<a
         href={`/api/auth/signin`}
         className="border p-1 bg-gray-100"
