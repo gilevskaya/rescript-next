@@ -26,7 +26,6 @@ export default function IndexPage() {
 
   return (
     <div>
-      <Landing />
       {!session && (<a
         href={`/api/auth/signin`}
         className="border p-1 bg-gray-100"
@@ -69,6 +68,8 @@ export default function IndexPage() {
           </a>
         </>
       )}
+
+      <Landing />
     </div>
   );
 }

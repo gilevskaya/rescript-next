@@ -96,4 +96,8 @@ export default NextAuth({
       return session
     },
   },
+  pages: {
+    signIn: '/',
+    signOut: '/'
+  },
 })
