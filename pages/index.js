@@ -11,18 +11,18 @@ export default function IndexPage() {
     }
   }, [session]);
 
-  React.useEffect(() => {
-    if (session?.user) {
-      fetch("https://tasks.googleapis.com/tasks/v1/users/@me/lists", {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${session.accessToken}`,
-          "content-type": "application/json"
-        }
-      }).then(response => response.json())
-        .then(json => console.log(json))
-    }
-  }, [session])
+  // React.useEffect(() => {
+  //   if (session?.user) {
+  //     fetch("https://tasks.googleapis.com/tasks/v1/users/@me/lists", {
+  //       method: "GET",
+  //       headers: {
+  //         Authorization: `Bearer ${session.accessToken}`,
+  //         "content-type": "application/json"
+  //       }
+  //     }).then(response => response.json())
+  //       .then(json => console.log(json))
+  //   }
+  // }, [session])
 
   return (
     <div>
