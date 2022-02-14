@@ -1,8 +1,9 @@
 module Header = {
   @react.component
-  let make = (~logout) => {
+  let make = (~logout, ~user) => {
     <div className="h-10 px-5 bg-gray-200 flex items-center justify-between">
       <div className="uppercase font-bold text-lg text-gray-600"> {"appname"->React.string} </div>
+      <UserInfo user />
       <Button
         title="logout"
         href="/api/auth/signout"
@@ -19,8 +20,6 @@ module Header = {
 let make = (~logout) => {
   let {session} = Session.use()
 
-  Js.log2("session", session)
-
   React.useEffect0(() => {
     if session->Belt.Option.isSome {
       let _ = %raw(`
@@ -36,8 +35,14 @@ let make = (~logout) => {
     None
   })
 
-  <>
-    <Next.Head> <title key="title"> {"App"->React.string} </title> </Next.Head>
-    <div> <Header logout /> <div className="p-5"> {React.string("Logged content...")} </div> </div>
-  </>
+  switch session {
+  | None => React.null
+  | Some(session) => <>
+      <Next.Head> <title key="title"> {"App"->React.string} </title> </Next.Head>
+      <div>
+        <Header logout user=session.user />
+        <div className="p-5"> {React.string("Logged content...")} </div>
+      </div>
+    </>
+  }
 }
