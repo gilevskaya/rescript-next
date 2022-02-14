@@ -6,6 +6,7 @@ module Data = {
     name: string,
   }
   type t = {
+    error: option<string>,
     accessToken: string,
     expires: string,
     user: user,
