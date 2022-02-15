@@ -20,9 +20,11 @@ module Header = {
 
 @react.component
 let make = () => {
+  let taskList = React.useMemo0(() => <TaskLists />)
+
   <Session.Context.Provider>
     <AppLayout>
-      <div className="mb-5 font-medium"> {React.string("Logged content:")} </div> <TaskLists />
+      <div className="mb-5 font-medium"> {React.string("Logged content:")} </div> {taskList}
     </AppLayout>
   </Session.Context.Provider>
 }

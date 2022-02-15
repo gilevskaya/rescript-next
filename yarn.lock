@@ -831,18 +831,6 @@ require-directory@^2.1.1:
   resolved "https://registry.yarnpkg.com/require-directory/-/require-directory-2.1.1.tgz#8c64ad5fd30dab1c976e2344ffe7f792a6a6df42"
   integrity sha1-jGStX9MNqxyXbiNE/+f3kqam30I=
 
-rescript-future@^2.0.0, rescript-future@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/rescript-future/-/rescript-future-2.1.0.tgz#a26b5169b9db53e0b897bb6529d7ec7bdd56bafd"
-  integrity sha512-WUgneUX0ikoavBmfhoBluGIlDuCfn5pKXBECTKpNknfBYKbSvQUzdXPbqViHhK8kTfJwGTicMpZJGf+RyiwfNw==
-
-rescript-request@^3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/rescript-request/-/rescript-request-3.0.1.tgz#88aa36b847355c9d2fc7510dd17d98a9633ca694"
-  integrity sha512-u8VLEysG40vcfRFHFGiR+k8wUQujSkdhD72j8AfpLQs+EUzonBIT+ZrQ1l7A2cdMXWcx6U/PmUijnB2cuJ0zDw==
-  dependencies:
-    rescript-future "^2.0.0"
-
 rescript@^9.1.4:
   version "9.1.4"
   resolved "https://registry.yarnpkg.com/rescript/-/rescript-9.1.4.tgz#1eb126f98d6c16942c0bf0df67c050198e580515"

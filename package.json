@@ -13,9 +13,7 @@
     "next-auth": "^4.2.1",
     "next-connect": "^0.12.1",
     "react": "17.0.1",
-    "react-dom": "17.0.1",
-    "rescript-future": "^2.1.0",
-    "rescript-request": "^3.0.1"
+    "react-dom": "17.0.1"
   },
   "license": "MIT",
   "keywords": [],

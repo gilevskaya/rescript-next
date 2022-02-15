@@ -19,9 +19,7 @@
   "suffix": ".bs.js",
   "bs-dependencies": [
     "@rescript/react",
-    "@ryyppy/rescript-promise",
-    "rescript-request",
-    "rescript-future"
+    "@ryyppy/rescript-promise"
   ],
   "bsc-flags": [
     "-bs-super-errors"
