@@ -19,10 +19,9 @@ module Header = {
 }
 
 @react.component
-let make = () => {
-  <Session.Context.Provider>
-    <AppLayout>
-      <div className="mb-5 font-medium"> {React.string("Logged content:")} </div> <TaskLists />
-    </AppLayout>
-  </Session.Context.Provider>
+let make = (~children) => {
+  <>
+    <Next.Head> <title key="title"> {"App"->React.string} </title> </Next.Head>
+    <div> <Header /> <div className="m-5 mt-10"> {children} </div> </div>
+  </>
 }

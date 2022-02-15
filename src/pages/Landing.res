@@ -13,8 +13,8 @@ let make = () => {
   <div className="m-5">
     <GoogleButton
       href="/api/auth/signin"
-      onClick={_e => {
-        let _ = %raw(`_e.preventDefault()`)
+      onClick={e => {
+        ReactEvent.Mouse.preventDefault(e)
         NextAuth.React.signIn(["google"])
       }}
     />
