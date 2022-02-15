@@ -1,5 +1,4 @@
-type tTaskList = {id: string, title: string}
-type tTaskListRes = {items: array<tTaskList>}
+type tTaskListRes = {items: array<UserData.Task.t>}
 
 module Response = {
   type t<'data>
@@ -30,16 +29,20 @@ let make = () => {
   let {session} = Session.useContext()
   let (lists, setLists) = React.useState(_ => None)
 
+  let mounted = React.useRef(false)
   Js.log("R::TasksList")
 
+  mounted.current = true
   React.useEffect0(() => {
     if lists->Belt.Option.isNone {
       let _ = getTaskLists(session.accessToken)->Promise.thenResolve(res => {
-        Js.log2("getTaskLists", res.items)
-        setLists(_ => Some(res.items))
+        if mounted.current {
+          Js.log2("setLists", res.items)
+          setLists(_ => Some(res.items))
+        }
       })
     }
-    None
+    Some(() => mounted.current = false)
   })
 
   switch lists {
