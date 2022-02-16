@@ -23,8 +23,10 @@ let make = () => {
   let taskList = React.useMemo0(() => <TaskLists />)
 
   <Session.Context.Provider>
-    <AppLayout>
-      <div className="mb-5 font-medium"> {React.string("Logged content:")} </div> {taskList}
-    </AppLayout>
+    <UserData.Context.Provider>
+      <AppLayout>
+        <div className="mb-5 font-medium"> {React.string("Logged content:")} </div> {taskList}
+      </AppLayout>
+    </UserData.Context.Provider>
   </Session.Context.Provider>
 }
