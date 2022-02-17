@@ -3,17 +3,9 @@ module Task = {
 }
 type tTaskListRes = {items: array<Task.t>}
 
-module Response = {
-  type t<'data>
-  @send external json: t<'data> => Promise.t<'data> = "json"
-}
-
-@val @scope("globalThis")
-external fetch: (string, 'params) => Promise.t<Response.t<tTaskListRes>> = "fetch"
-
 let getTaskLists = (accessToken: string) => {
   let baseURL = "https://tasks.googleapis.com/tasks/v1"
-  fetch(
+  Fetch.fetch(
     `${baseURL}/users/@me/lists`,
     {
       "method": "GET",
@@ -23,7 +15,8 @@ let getTaskLists = (accessToken: string) => {
       },
     },
   )->Promise.then(res => {
-    Response.json(res)
+    let data: Promise.t<tTaskListRes> = Fetch.Response.json(res)
+    data
   })
 }
 
